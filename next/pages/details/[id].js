@@ -1,25 +1,10 @@
-import { Box } from '@mui/material';
-import { useRouter } from 'next/router';
 import { DetailsView } from '../../components/details/DetailsView';
 import Layout from '../../components/layout/layout';
 
 const Details = ({ productDetails }) => {
 	console.log(productDetails);
 
-	return (
-		<div>
-			<style global jsx>{`
-				html,
-				body,
-				body > div:first-child,
-				div#__next,
-				div#__next > div {
-					height: 100%;
-				}
-			`}</style>
-			<DetailsView product={productDetails} />
-		</div>
-	);
+	return <DetailsView product={productDetails} />;
 };
 
 Details.getLayout = function getLayout(page) {

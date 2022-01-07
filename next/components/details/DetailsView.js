@@ -10,10 +10,18 @@ export const DetailsView = ({ product }) => {
 			justifyContent="center"
 			alignItems="center"
 			spacing={3}
-			padding="30px"
+			paddingTop="20px"
 		>
 			<Grid item xs={5} justifyContent="center" alignItems="center">
-				<img src={product.image} width="400px" />
+				{/* <img src={product.image} width="400px" /> */}
+				<Image
+					src={product.image}
+					alt=""
+					width="100%"
+					height="100%"
+					layout="responsive"
+					objectFit="contain"
+				/>
 			</Grid>
 			<Grid item xs={7} container spacing={2}>
 				<Box display="flex" flexDirection="column" alignItems="flex-start">
