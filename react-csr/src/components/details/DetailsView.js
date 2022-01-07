@@ -1,6 +1,5 @@
 import { Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import Image from 'next/image';
 
 export const DetailsView = ({ product }) => {
 	return (
@@ -12,15 +11,7 @@ export const DetailsView = ({ product }) => {
 			paddingTop="20px"
 		>
 			<Grid item xs={5} justifyContent="center" alignItems="center">
-				{/* <img src={product.image} width="400px" /> */}
-				<Image
-					src={product.image}
-					alt=""
-					width="100%"
-					height="100%"
-					layout="responsive"
-					objectFit="contain"
-				/>
+				<img src={product.image} alt={product.title} width="400px" />
 			</Grid>
 			<Grid item xs={7} container spacing={2}>
 				<Box display="flex" flexDirection="column" alignItems="flex-start">

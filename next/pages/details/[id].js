@@ -2,8 +2,6 @@ import { DetailsView } from '../../components/details/DetailsView';
 import Layout from '../../components/layout/layout';
 
 const Details = ({ productDetails }) => {
-	console.log(productDetails);
-
 	return <DetailsView product={productDetails} />;
 };
 
