@@ -2,36 +2,41 @@ import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 
 const columns = [
-	{ field: 'id', headerName: 'ID', width: 90 },
 	{
 		field: 'id',
 		headerName: 'ID',
-		width: 50,
+		flex: 100,
+		minWidth: 50,
 	},
 	{
 		field: 'email',
 		headerName: 'Email',
-		width: 200,
+		flex: 200,
+		minWidth: 200,
 	},
 	{
 		field: 'name',
 		headerName: 'Name',
-		width: 200,
+		flex: 200,
+		minWidth: 200,
 	},
 	{
 		field: 'address',
 		headerName: 'Address',
-		width: 200,
+		flex: 250,
+		minWidth: 200,
 	},
 	{
 		field: 'username',
 		headerName: 'Username',
-		width: 200,
+		flex: 200,
+		minWidth: 200,
 	},
 	{
 		field: 'phone',
 		headerName: 'Phone',
-		width: 200,
+		flex: 200,
+		minWidth: 200,
 	},
 ];
 
@@ -53,14 +58,13 @@ export default function UsersList({ usersList }) {
 		};
 	});
 	return (
-		<div style={{ height: 400, width: '100%' }}>
+		<div style={{ height: '400px', width: '100%' }}>
 			<DataGrid
 				rows={rows}
 				columns={columns}
 				pageSize={5}
 				rowsPerPageOptions={[5]}
 				disableSelectionOnClick
-				isRowSelectable={false}
 				disableColumnSelector
 			/>
 		</div>

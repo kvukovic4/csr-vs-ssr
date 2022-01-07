@@ -16,6 +16,7 @@ const MyApp = (props) => {
 		categories,
 	} = props;
 	const getLayout = Component.getLayout || ((page) => page);
+
 	return (
 		<CacheProvider value={emotionCache}>
 			<ThemeProvider theme={theme}>

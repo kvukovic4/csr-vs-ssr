@@ -14,14 +14,13 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import CategoryIcon from '@mui/icons-material/Category';
 import GroupIcon from '@mui/icons-material/Group';
-import { Collapse } from '@mui/material';
+import { Collapse, useMediaQuery } from '@mui/material';
 import { useState } from 'react';
 import Link from 'next/link';
 
-const drawerWidth = 240;
-
 export default function SideNav({ children }) {
 	const [open, setOpen] = useState();
+	const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 	const handleClick = () => {
 		setOpen(!open);
 	};
@@ -39,12 +38,12 @@ export default function SideNav({ children }) {
 				</Toolbar>
 			</AppBar>
 			<Drawer
-				variant="permanent"
+				variant={mobile ? 'temporary' : 'permanent'}
 				sx={{
-					width: drawerWidth,
+					width: mobile ? 100 : 250,
 					flexShrink: 0,
 					[`& .MuiDrawer-paper`]: {
-						width: drawerWidth,
+						width: mobile ? 100 : 250,
 						boxSizing: 'border-box',
 					},
 				}}
@@ -52,7 +51,7 @@ export default function SideNav({ children }) {
 				<Toolbar />
 				<Box sx={{ overflow: 'auto' }}>
 					<List aria-labelledby="nested-list-subheader">
-						<Link href="/products">
+						<Link href="/products/all-products" passHref>
 							<ListItem button key="1">
 								<ListItemIcon>
 									<ShoppingBagIcon />
@@ -79,7 +78,7 @@ export default function SideNav({ children }) {
 						</ListItem>
 						<Collapse in={open} timeout="auto" unmountOnExit>
 							<List>
-								<Link href="/products">
+								<Link href="/products/electronics" passHref>
 									<ListItem button key="3">
 										<ListItemText
 											sx={{ marginLeft: '55px' }}
@@ -92,11 +91,11 @@ export default function SideNav({ children }) {
 									</ListItem>
 								</Link>
 
-								<Link href="/products">
+								<Link href="/products/jewelery" passHref>
 									<ListItem button key="4">
 										<ListItemText
 											sx={{ marginLeft: '55px' }}
-											primary="Jewerely"
+											primary="Jewelery"
 											primaryTypographyProps={{
 												fontSize: 14,
 												fontWeight: 'normal',
@@ -105,7 +104,7 @@ export default function SideNav({ children }) {
 									</ListItem>
 								</Link>
 
-								<Link href="/products">
+								<Link href="/products/men's clothing" passHref>
 									<ListItem button key="5">
 										<ListItemText
 											sx={{ marginLeft: '55px' }}
@@ -118,7 +117,7 @@ export default function SideNav({ children }) {
 									</ListItem>
 								</Link>
 
-								<Link href="/products">
+								<Link href="/products/women's clothing" passHref>
 									<ListItem button key="6">
 										<ListItemText
 											sx={{ marginLeft: '55px' }}
@@ -135,7 +134,7 @@ export default function SideNav({ children }) {
 					</List>
 					<Divider />
 					<List>
-						<Link href="/users">
+						<Link href="/users" passHref>
 							<ListItem button key="4">
 								<ListItemIcon>
 									<GroupIcon />

@@ -1,8 +1,16 @@
+import { Typography } from '@mui/material';
 import Layout from '../../components/layout/layout';
 import UsersList from '../../components/users-table/DataGrid';
 
 const Users = ({ usersList }) => {
-	return <UsersList usersList={usersList} />;
+	return (
+		<>
+			<Typography variant="h5" marginBottom="15px">
+				USERS
+			</Typography>
+			<UsersList usersList={usersList} />
+		</>
+	);
 };
 
 Users.getLayout = function getLayout(page) {
