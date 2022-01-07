@@ -7,6 +7,7 @@ import ProductCard from '../../components/card/ProductCard';
 const Products = () => {
 	let { category } = useParams();
 	const [products, setProducts] = useState([]);
+	const [products2, setProducts2] = useState([]);
 	useEffect(() => {
 		async function fetchProducts() {
 			let url = '';
@@ -18,6 +19,9 @@ const Products = () => {
 			const res = await fetch(url);
 			const products = await res.json();
 			setProducts(products);
+			const res2 = await fetch('https://fakestoreapi.com/products');
+			const products2 = await res2.json();
+			setProducts2(products2);
 		}
 		fetchProducts();
 	}, [category]);
@@ -30,6 +34,16 @@ const Products = () => {
 				</Typography>
 			</Grid>
 			{products.map((product) => (
+				<Grid item xs={3} key={product.id}>
+					<ProductCard product={product} />
+				</Grid>
+			))}
+			{products.map((product) => (
+				<Grid item xs={3} key={product.id}>
+					<ProductCard product={product} />
+				</Grid>
+			))}
+			{products2.map((product) => (
 				<Grid item xs={3} key={product.id}>
 					<ProductCard product={product} />
 				</Grid>

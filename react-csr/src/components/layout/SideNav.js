@@ -48,7 +48,10 @@ export default function SideNav({ children }) {
 				<Toolbar />
 				<Box sx={{ overflow: 'auto' }}>
 					<List aria-labelledby="nested-list-subheader">
-						<Link to="/products/all-products">
+						<Link
+							to="/products/all-products"
+							style={{ color: 'inherit', textDecoration: 'inherit' }}
+						>
 							<ListItem button key="1">
 								<ListItemIcon>
 									<ShoppingBagIcon />
@@ -75,7 +78,10 @@ export default function SideNav({ children }) {
 						</ListItem>
 						<Collapse in={open} timeout="auto" unmountOnExit>
 							<List>
-								<Link to="/products/electronics" passto>
+								<Link
+									to="/products/electronics"
+									style={{ color: 'inherit', textDecoration: 'inherit' }}
+								>
 									<ListItem button key="3">
 										<ListItemText
 											sx={{ marginLeft: '55px' }}
@@ -88,7 +94,10 @@ export default function SideNav({ children }) {
 									</ListItem>
 								</Link>
 
-								<Link to="/products/jewelery" passto>
+								<Link
+									to="/products/jewelery"
+									style={{ color: 'inherit', textDecoration: 'inherit' }}
+								>
 									<ListItem button key="4">
 										<ListItemText
 											sx={{ marginLeft: '55px' }}
@@ -101,7 +110,10 @@ export default function SideNav({ children }) {
 									</ListItem>
 								</Link>
 
-								<Link to="/products/men's clothing" passto>
+								<Link
+									to="/products/men's clothing"
+									style={{ color: 'inherit', textDecoration: 'inherit' }}
+								>
 									<ListItem button key="5">
 										<ListItemText
 											sx={{ marginLeft: '55px' }}
@@ -114,7 +126,10 @@ export default function SideNav({ children }) {
 									</ListItem>
 								</Link>
 
-								<Link to="/products/women's clothing" passto>
+								<Link
+									to="/products/women's clothing"
+									style={{ color: 'inherit', textDecoration: 'inherit' }}
+								>
 									<ListItem button key="6">
 										<ListItemText
 											sx={{ marginLeft: '55px' }}
@@ -131,7 +146,10 @@ export default function SideNav({ children }) {
 					</List>
 					<Divider />
 					<List>
-						<Link to="/users" passto>
+						<Link
+							to="/users"
+							style={{ color: 'inherit', textDecoration: 'inherit' }}
+						>
 							<ListItem button key="4">
 								<ListItemIcon>
 									<GroupIcon />

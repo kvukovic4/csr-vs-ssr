@@ -17,6 +17,11 @@ const Products = ({ productList }) => {
 					<ProductCard product={product} />
 				</Grid>
 			))}
+			{productList.map((product) => (
+				<Grid item xs={3} key={product.id}>
+					<ProductCard product={product} />
+				</Grid>
+			))}
 		</Grid>
 	);
 };
@@ -27,8 +32,7 @@ Products.getLayout = function getLayout(page) {
 	return <Layout>{page}</Layout>;
 };
 
-export async function getServerSideProps({ params }) {
-	const filter = params.filter;
+export async function getStaticProps({ params: { filter } }) {
 	let url = 'https://fakestoreapi.com/products';
 
 	if (filter === 'all-products') {
@@ -44,5 +48,20 @@ export async function getServerSideProps({ params }) {
 		props: {
 			productList: products,
 		},
+		revalidate: 60 * 60,
+	};
+}
+
+export async function getStaticPaths() {
+	let categories = ['all-products'];
+	const res = await fetch('https://fakestoreapi.com/products/categories');
+	const resJson = await res.json();
+	categories = [...categories, ...resJson];
+
+	return {
+		paths: categories.map((category) => ({
+			params: { filter: category },
+		})),
+		fallback: false,
 	};
 }
