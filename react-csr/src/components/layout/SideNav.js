@@ -128,7 +128,7 @@ export default function SideNav({ children }) {
 							</List>
 						</Collapse>
 					</List>
-					<Divider />
+					{/* <Divider />
 					<List>
 						<Link
 							to="/users"
@@ -147,7 +147,7 @@ export default function SideNav({ children }) {
 								/>
 							</ListItem>
 						</Link>
-					</List>
+					</List> */}
 				</Box>
 			</Drawer>
 			<Box component="main" sx={{ flexGrow: 1, p: 3 }}>
