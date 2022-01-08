@@ -2,6 +2,7 @@ import { Grid, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 import ProductCard from '../../components/card/ProductCard';
 import Layout from '../../components/layout/layout';
+import { v4 as uuidv4 } from 'uuid';
 
 const Products = ({ productList }) => {
 	const router = useRouter();
@@ -13,12 +14,7 @@ const Products = ({ productList }) => {
 				<Typography variant="h5">{filter.toUpperCase()}</Typography>
 			</Grid>
 			{productList.map((product) => (
-				<Grid item xs={3} key={product.id}>
-					<ProductCard product={product} />
-				</Grid>
-			))}
-			{productList.map((product) => (
-				<Grid item xs={3} key={product.id}>
+				<Grid item xs={3} key={uuidv4()}>
 					<ProductCard product={product} />
 				</Grid>
 			))}
@@ -33,17 +29,23 @@ Products.getLayout = function getLayout(page) {
 };
 
 export async function getStaticProps({ params: { filter } }) {
-	let url = 'https://fakestoreapi.com/products';
+	let url = 'https://nike-products.p.rapidapi.com/shoes';
 
 	if (filter === 'all-products') {
-		url = 'https://fakestoreapi.com/products';
+		url = 'https://nike-products.p.rapidapi.com/shoes';
 	} else {
-		url = `https://fakestoreapi.com/products/category/${filter}`;
+		url = `https://nike-products.p.rapidapi.com/shoes/${filter}`;
 	}
 
-	const res = await fetch(url);
+	const res = await fetch(url, {
+		headers: {
+			'x-rapidapi-host': 'nike-products.p.rapidapi.com',
+			'x-rapidapi-key': 'eb46880fd2msh7178573f9378debp148336jsned30b68c2691',
+		},
+	});
 
 	const products = await res.json();
+	console.log(products);
 	return {
 		props: {
 			productList: products,
@@ -53,10 +55,7 @@ export async function getStaticProps({ params: { filter } }) {
 }
 
 export async function getStaticPaths() {
-	let categories = ['all-products'];
-	const res = await fetch('https://fakestoreapi.com/products/categories');
-	const resJson = await res.json();
-	categories = [...categories, ...resJson];
+	let categories = ['all-products', 'men-shoes', 'women-shoes', 'kids-shoes'];
 
 	return {
 		paths: categories.map((category) => ({

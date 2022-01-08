@@ -3,7 +3,6 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import StarIcon from '@mui/icons-material/Star';
 import { Box } from '@mui/system';
 import { useNavigate } from 'react-router-dom';
 
@@ -31,12 +30,12 @@ export default function ProductCard({ product }) {
 		<Card
 			sx={{ height: '330px', paddingTop: '15px' }}
 			onClick={() => {
-				history(`/details/${product.id}`);
+				history(product.url);
 			}}
 		>
 			<CardMedia
 				component="img"
-				image={product.image}
+				image={product.img}
 				alt={product.title}
 				style={styles.image}
 			/>
@@ -44,14 +43,10 @@ export default function ProductCard({ product }) {
 				<Typography gutterBottom component="div" style={styles.title}>
 					{product.title}
 				</Typography>
-				<Box display="flex" justifyContent="space-between">
-					<Box display="flex" justifyContent="flex-end">
-						<Typography>{product.rating.rate}</Typography>
-						<StarIcon />
-					</Box>
-					<Box display="flex" justifyContent="flex-end">
-						<Typography>${product.price}</Typography>
-					</Box>
+				<Box display="flex" justifyContent="flex-start">
+					<Typography gutterBottom variant="h5">
+						{product.price}
+					</Typography>
 				</Box>
 			</CardContent>
 		</Card>

@@ -79,13 +79,13 @@ export default function SideNav({ children }) {
 						<Collapse in={open} timeout="auto" unmountOnExit>
 							<List>
 								<Link
-									to="/products/electronics"
+									to="/products/men-shoes"
 									style={{ color: 'inherit', textDecoration: 'inherit' }}
 								>
 									<ListItem button key="3">
 										<ListItemText
 											sx={{ marginLeft: '55px' }}
-											primary="Electronics"
+											primary="Men shoes"
 											primaryTypographyProps={{
 												fontSize: 14,
 												fontWeight: 'normal',
@@ -95,13 +95,13 @@ export default function SideNav({ children }) {
 								</Link>
 
 								<Link
-									to="/products/jewelery"
+									to="/products/women-shoes"
 									style={{ color: 'inherit', textDecoration: 'inherit' }}
 								>
 									<ListItem button key="4">
 										<ListItemText
 											sx={{ marginLeft: '55px' }}
-											primary="Jewelery"
+											primary="Women shoes"
 											primaryTypographyProps={{
 												fontSize: 14,
 												fontWeight: 'normal',
@@ -111,29 +111,13 @@ export default function SideNav({ children }) {
 								</Link>
 
 								<Link
-									to="/products/men's clothing"
+									to="/products/kids-shoes"
 									style={{ color: 'inherit', textDecoration: 'inherit' }}
 								>
 									<ListItem button key="5">
 										<ListItemText
 											sx={{ marginLeft: '55px' }}
-											primary="Men's Clothing"
-											primaryTypographyProps={{
-												fontSize: 14,
-												fontWeight: 'normal',
-											}}
-										/>
-									</ListItem>
-								</Link>
-
-								<Link
-									to="/products/women's clothing"
-									style={{ color: 'inherit', textDecoration: 'inherit' }}
-								>
-									<ListItem button key="6">
-										<ListItemText
-											sx={{ marginLeft: '55px' }}
-											primary="Women's Clothing"
+											primary="Kids shoes"
 											primaryTypographyProps={{
 												fontSize: 14,
 												fontWeight: 'normal',

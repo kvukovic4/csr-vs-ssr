@@ -31,12 +31,12 @@ export default function ProductCard({ product }) {
 		<Card
 			sx={{ height: '330px', paddingTop: '15px' }}
 			onClick={() => {
-				router.push(`/details/${product.id}`);
+				router.push(product.url);
 			}}
 		>
 			<CardMedia
 				component="img"
-				image={product.image}
+				image={product.img}
 				alt={product.title}
 				style={styles.image}
 			/>
@@ -44,14 +44,10 @@ export default function ProductCard({ product }) {
 				<Typography gutterBottom component="div" style={styles.title}>
 					{product.title}
 				</Typography>
-				<Box display="flex" justifyContent="space-between">
-					<Box display="flex" justifyContent="flex-end">
-						<Typography>{product.rating.rate}</Typography>
-						<StarIcon />
-					</Box>
-					<Box display="flex" justifyContent="flex-end">
-						<Typography>${product.price}</Typography>
-					</Box>
+				<Box display="flex" justifyContent="flex-start">
+					<Typography gutterBottom variant="h5">
+						{product.price}
+					</Typography>
 				</Box>
 			</CardContent>
 		</Card>

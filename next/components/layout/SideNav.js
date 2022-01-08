@@ -33,7 +33,7 @@ export default function SideNav({ children }) {
 			>
 				<Toolbar>
 					<Typography variant="h6" noWrap component="div">
-						E-commerce
+						Nike shop (RapidAPI Nike Products)
 					</Typography>
 				</Toolbar>
 			</AppBar>
@@ -78,11 +78,11 @@ export default function SideNav({ children }) {
 						</ListItem>
 						<Collapse in={open} timeout="auto" unmountOnExit>
 							<List>
-								<Link href="/products/electronics" passHref>
+								<Link href="/products/men-shoes" passHref>
 									<ListItem button key="3">
 										<ListItemText
 											sx={{ marginLeft: '55px' }}
-											primary="Electronics"
+											primary="Men shoes"
 											primaryTypographyProps={{
 												fontSize: 14,
 												fontWeight: 'normal',
@@ -91,11 +91,11 @@ export default function SideNav({ children }) {
 									</ListItem>
 								</Link>
 
-								<Link href="/products/jewelery" passHref>
+								<Link href="/products/women-shoes" passHref>
 									<ListItem button key="4">
 										<ListItemText
 											sx={{ marginLeft: '55px' }}
-											primary="Jewelery"
+											primary="Women shoes"
 											primaryTypographyProps={{
 												fontSize: 14,
 												fontWeight: 'normal',
@@ -104,24 +104,11 @@ export default function SideNav({ children }) {
 									</ListItem>
 								</Link>
 
-								<Link href="/products/men's clothing" passHref>
+								<Link href="/products/kids-shoes" passHref>
 									<ListItem button key="5">
 										<ListItemText
 											sx={{ marginLeft: '55px' }}
-											primary="Men's Clothing"
-											primaryTypographyProps={{
-												fontSize: 14,
-												fontWeight: 'normal',
-											}}
-										/>
-									</ListItem>
-								</Link>
-
-								<Link href="/products/women's clothing" passHref>
-									<ListItem button key="6">
-										<ListItemText
-											sx={{ marginLeft: '55px' }}
-											primary="Women's Clothing"
+											primary="Kids shoes"
 											primaryTypographyProps={{
 												fontSize: 14,
 												fontWeight: 'normal',
