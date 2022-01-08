@@ -45,12 +45,11 @@ export async function getStaticProps({ params: { filter } }) {
 	});
 
 	const products = await res.json();
-	console.log(products);
 	return {
 		props: {
 			productList: products,
 		},
-		revalidate: 60 * 60,
+		revalidate: 86400,
 	};
 }
 
