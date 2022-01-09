@@ -1,21 +1,19 @@
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import CategoryIcon from '@mui/icons-material/Category';
-import GroupIcon from '@mui/icons-material/Group';
-import { Collapse } from '@mui/material';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import List from "@mui/material/List";
+import Typography from "@mui/material/Typography";
+import ListItem from "@mui/material/ListItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+import CategoryIcon from "@mui/icons-material/Category";
+import { Collapse } from "@mui/material";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function SideNav({ children }) {
 	const [open, setOpen] = useState();
@@ -23,7 +21,7 @@ export default function SideNav({ children }) {
 		setOpen(!open);
 	};
 	return (
-		<Box sx={{ display: 'flex' }}>
+		<Box sx={{ display: "flex" }}>
 			<AppBar
 				position="fixed"
 				sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
@@ -41,16 +39,16 @@ export default function SideNav({ children }) {
 					flexShrink: 0,
 					[`& .MuiDrawer-paper`]: {
 						width: 250,
-						boxSizing: 'border-box',
+						boxSizing: "border-box",
 					},
 				}}
 			>
 				<Toolbar />
-				<Box sx={{ overflow: 'auto' }}>
+				<Box sx={{ overflow: "auto" }}>
 					<List aria-labelledby="nested-list-subheader">
 						<Link
 							to="/products/all-products"
-							style={{ color: 'inherit', textDecoration: 'inherit' }}
+							style={{ color: "inherit", textDecoration: "inherit" }}
 						>
 							<ListItem button key="1">
 								<ListItemIcon>
@@ -60,7 +58,7 @@ export default function SideNav({ children }) {
 									primary="All Products"
 									primaryTypographyProps={{
 										fontSize: 14,
-										fontWeight: 'medium',
+										fontWeight: "medium",
 									}}
 								/>
 							</ListItem>
@@ -72,7 +70,7 @@ export default function SideNav({ children }) {
 							</ListItemIcon>
 							<ListItemText
 								primary="Categories"
-								primaryTypographyProps={{ fontSize: 14, fontWeight: 'medium' }}
+								primaryTypographyProps={{ fontSize: 14, fontWeight: "medium" }}
 							/>
 							{open ? <ExpandLess /> : <ExpandMore />}
 						</ListItem>
@@ -80,15 +78,15 @@ export default function SideNav({ children }) {
 							<List>
 								<Link
 									to="/products/men-shoes"
-									style={{ color: 'inherit', textDecoration: 'inherit' }}
+									style={{ color: "inherit", textDecoration: "inherit" }}
 								>
 									<ListItem button key="3">
 										<ListItemText
-											sx={{ marginLeft: '55px' }}
+											sx={{ marginLeft: "55px" }}
 											primary="Men shoes"
 											primaryTypographyProps={{
 												fontSize: 14,
-												fontWeight: 'normal',
+												fontWeight: "normal",
 											}}
 										/>
 									</ListItem>
@@ -96,15 +94,15 @@ export default function SideNav({ children }) {
 
 								<Link
 									to="/products/women-shoes"
-									style={{ color: 'inherit', textDecoration: 'inherit' }}
+									style={{ color: "inherit", textDecoration: "inherit" }}
 								>
 									<ListItem button key="4">
 										<ListItemText
-											sx={{ marginLeft: '55px' }}
+											sx={{ marginLeft: "55px" }}
 											primary="Women shoes"
 											primaryTypographyProps={{
 												fontSize: 14,
-												fontWeight: 'normal',
+												fontWeight: "normal",
 											}}
 										/>
 									</ListItem>
@@ -112,15 +110,15 @@ export default function SideNav({ children }) {
 
 								<Link
 									to="/products/kids-shoes"
-									style={{ color: 'inherit', textDecoration: 'inherit' }}
+									style={{ color: "inherit", textDecoration: "inherit" }}
 								>
 									<ListItem button key="5">
 										<ListItemText
-											sx={{ marginLeft: '55px' }}
+											sx={{ marginLeft: "55px" }}
 											primary="Kids shoes"
 											primaryTypographyProps={{
 												fontSize: 14,
-												fontWeight: 'normal',
+												fontWeight: "normal",
 											}}
 										/>
 									</ListItem>
@@ -128,26 +126,6 @@ export default function SideNav({ children }) {
 							</List>
 						</Collapse>
 					</List>
-					{/* <Divider />
-					<List>
-						<Link
-							to="/users"
-							style={{ color: 'inherit', textDecoration: 'inherit' }}
-						>
-							<ListItem button key="4">
-								<ListItemIcon>
-									<GroupIcon />
-								</ListItemIcon>
-								<ListItemText
-									primary="Users"
-									primaryTypographyProps={{
-										fontSize: 14,
-										fontWeight: 'medium',
-									}}
-								/>
-							</ListItem>
-						</Link>
-					</List> */}
 				</Box>
 			</Drawer>
 			<Box component="main" sx={{ flexGrow: 1, p: 3 }}>
